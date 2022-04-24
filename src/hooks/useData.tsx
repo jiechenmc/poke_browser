@@ -1,28 +1,34 @@
-import { PokemonClient } from "pokenode-ts";
+import { Pokemon, PokemonClient } from "pokenode-ts";
 
-interface BaseStats {
-  hp: number;
-  attack: number;
-  defense: number;
-  specialAtk: number;
-  specialDef: number;
-  specialSpeed: number;
-}
-
-(async () => {
+const useData = async () => {
   const api = new PokemonClient();
 
   await api
-    .getPokemonByName("luxray")
+    .getPokemonByName("bulbasaur")
     .then((data) => {
-      let baseStats: BaseStats = {
-        hp: data.stats[0].base_stat,
-        attack: data.stats[1].base_stat,
-        defense: data.stats[2].base_stat,
-        specialAtk: data.stats[3].base_stat,
-        specialDef: data.stats[4].base_stat,
-        specialSpeed: data.stats[5].base_stat,
+      let pokemon: Pokemon = {
+        id: data.id,
+        name: data.name,
+        base_experience: data.base_experience,
+        height: data.height,
+        is_default: data.is_default,
+        order: data.order,
+        weight: data.weight,
+        abilities: data.abilities,
+        forms: data.forms,
+        game_indices: data.game_indices,
+        held_items: data.held_items,
+        location_area_encounters: data.location_area_encounters,
+        moves: data.moves,
+        sprites: data.sprites,
+        species: data.species,
+        stats: data.stats,
+        types: data.types,
+        past_types: data.past_types,
       };
+      return pokemon;
     })
     .catch((error) => console.error(error));
-})();
+};
+
+export default useData;
