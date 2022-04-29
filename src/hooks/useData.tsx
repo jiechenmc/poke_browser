@@ -13,7 +13,7 @@ const usePokemonData = (pokemonName: string) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // Closure to handle resolve promises and setState
+      // Closure to resolve promises and setState
       let PokemonData = await api.pokemon.getPokemonByName(pokemonName);
       let EvolutionData = await api.evolution.getEvolutionChainById(
         PokemonData.id
