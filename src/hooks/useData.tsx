@@ -5,7 +5,7 @@ interface PokemonData extends Pokemon {
   evolution_chain: ChainLink;
 }
 
-const useData = (pokemonName: string) => {
+const usePokemonData = (pokemonName: string) => {
   const api = new MainClient({
     cacheOptions: { maxAge: 60000, exclude: { query: false } },
   });
@@ -13,6 +13,7 @@ const useData = (pokemonName: string) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      // Closure to handle resolve promises and setState
       let PokemonData = await api.pokemon.getPokemonByName(pokemonName);
       let EvolutionData = await api.evolution.getEvolutionChainById(
         PokemonData.id
@@ -47,4 +48,4 @@ const useData = (pokemonName: string) => {
   return pokemon;
 };
 
-export default useData;
+export default usePokemonData;

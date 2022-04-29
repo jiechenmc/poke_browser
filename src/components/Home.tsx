@@ -1,9 +1,9 @@
 import React from "react";
 import TypeFlair from "./TypeFlair";
-import useData from "../hooks/useData";
+import usePokemonData from "../hooks/useData";
 
 const Home = () => {
-  const data = useData("bulbasaur");
+  const data = usePokemonData("bulbasaur");
   console.log(data);
   return (
     <div className="">

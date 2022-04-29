@@ -9,6 +9,8 @@ const TypeFlair = ({ type }: TypeProps) => {
   let flairStyling: string;
 
   switch (type) {
+    // Each type has their own flair color
+    // Currently unaware of any better way to do this :)
     case "NORMAL": {
       flairStyling = "block bg-normal w-max rounded-md";
       break;
@@ -85,6 +87,7 @@ const TypeFlair = ({ type }: TypeProps) => {
       flairStyling = "block bg-fairy w-max rounded-md";
       break;
     }
+
     default: {
       flairStyling = "block bg-warning w-max rounded-md";
       type = "INVALID TYPE RECEIVED";
