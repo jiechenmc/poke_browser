@@ -1,6 +1,6 @@
 import React from "react";
 import TypeFlair from "./TypeFlair";
-import usePokemonData from "../hooks/useData";
+import usePokemonData from "../hooks/usePokemonData";
 
 const Home = () => {
   const data = usePokemonData("bulbasaur");
