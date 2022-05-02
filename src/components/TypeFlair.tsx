@@ -97,7 +97,7 @@ const TypeFlair = ({ type }: TypeProps) => {
 
   return (
     <div className={flairStyling}>
-      <p className="appearance-none text-white px-1 py-1 font-mono">{type}</p>
+      <p className="appearance-none text-white px-1 py-1 font-sans">{type}</p>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -22,6 +24,9 @@ module.exports = {
         steel: "#B7B7CE",
         fairy: "#D685AD",
         warning: "#FF0000",
+      },
+      fontFamily: {
+        sans: ["Source Sans Pro"],
       },
     },
   },
