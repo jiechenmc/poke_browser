@@ -7,7 +7,7 @@ interface PokemonData extends Pokemon {
 
 const usePokemonData = (pokemonName: string) => {
   const api = new MainClient({
-    cacheOptions: { maxAge: 60000, exclude: { query: false } },
+    cacheOptions: { maxAge: 900_000, exclude: { query: false } },
   });
   const [pokemon, setPokemon] = useState<PokemonData>();
 
