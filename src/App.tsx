@@ -1,15 +1,31 @@
-import TypeFlair from "./components/TypeFlair";
+import { useEffect } from "react";
+import PokemonCard from "./components/PokemonCard";
 import usePokemonData from "./hooks/usePokemonData";
 
 function App() {
-  const data = usePokemonData(500);
-  const img_src = data?.sprites.other["official-artwork"].front_default;
-  console.log(data);
-  return (
-    <div className="App">
-      <TypeFlair type="DARK" />
-    </div>
-  );
+  let pokemons: any = [];
+
+  // 1 - 888
+  for (let i = 1; i < 899; ++i) {
+    let data = usePokemonData(i);
+    if (data !== undefined) {
+      pokemons.push(data);
+    }
+  }
+
+  pokemons.sort((pokemonA: any, pokemonB: any) => {
+    return pokemonA.order > pokemonB.order ? 1 : -1;
+  });
+
+  {
+    return (
+      <div className="App flex flex-wrap">
+        {pokemons.map((pokemon: any) => (
+          <PokemonCard key={pokemon?.name} data={pokemon} />
+        ))}
+      </div>
+    );
+  }
 }
 
 export default App;
