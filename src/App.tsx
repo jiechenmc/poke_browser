@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import PokemonCard from "./components/PokemonCard";
 import usePokemonData from "./hooks/usePokemonData";
 
