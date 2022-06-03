@@ -13,7 +13,7 @@ const PokemonCard = ({ data }: any) => {
   ));
 
   return (
-    <div className="flex flex-col w-24 mx-10 border-red-600 border-1">
+    <div className="flex flex-col w-24 mt-5 border-red-600 border-1">
       <div>
         <img loading="lazy" src={img_src} width="100%" height="100%" />
       </div>

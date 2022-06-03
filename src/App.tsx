@@ -6,7 +6,7 @@ function App() {
   let pokemons: any = [];
 
   // 1 - 888
-  for (let i = 1; i < 899; ++i) {
+  for (let i = 1; i < 10; ++i) {
     let data = usePokemonData(i);
     if (data !== undefined) {
       pokemons.push(data);
@@ -19,7 +19,7 @@ function App() {
 
   {
     return (
-      <div className="App flex flex-wrap">
+      <div className="App grid grid-cols-3 place-items-center	">
         {pokemons.map((pokemon: any) => (
           <PokemonCard key={pokemon?.name} data={pokemon} />
         ))}
