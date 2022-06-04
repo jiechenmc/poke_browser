@@ -13,13 +13,23 @@ const PokemonCard = ({ data }: any) => {
   ));
 
   return (
-    <div className="flex flex-col w-24 mt-5 border-red-600 border-1">
-      <div>
-        <img loading="lazy" src={img_src} width="100%" height="100%" />
-      </div>
-      <div className="text-center text-neutral-400">#{order}</div>
-      <div className="text-center text-blue-500 text-md capitalize">{name}</div>
-      <div className="flex justify-center uppercase gap-1">{flair}</div>
+    <div className="flex flex-col w-30% mt-5 bg-neutral-200 border-2 border-solid">
+      <a href={`/pokemon/${name}`}>
+        <div>
+          <img
+            loading="lazy"
+            src={img_src}
+            width="100%"
+            height="100%"
+            alt={name}
+          />
+        </div>
+        <div className="text-center text-neutral-800">#{order}</div>
+        <div className="text-center text-blue-500 text-md capitalize">
+          {name}
+        </div>
+        <div className="flex justify-center uppercase gap-1">{flair}</div>
+      </a>
     </div>
   );
 };
