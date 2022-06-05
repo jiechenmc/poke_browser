@@ -27,7 +27,7 @@ const TypeFlair = ({ type }: TypeProps) => {
   }
 
   return (
-    <div className={`block ${type ? types[type] : "bg-warning"} w-max rounded-md`}>
+    <div className={`block ${types[type] ?? "bg-warning"} w-max rounded-md`}>
       <p className="appearance-none text-sm font-semibold text-white px-1 py-1 font-sans uppercase">
         {type}
       </p>
