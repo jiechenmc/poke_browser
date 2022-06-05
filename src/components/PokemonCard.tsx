@@ -4,7 +4,7 @@ import TypeFlair from "./TypeFlair";
 
 const PokemonCard = ({ data }: any) => {
   const img_src = data?.sprites.other["official-artwork"].front_default!;
-  const order = data.order;
+  const id = data.id;
   const name = data.name;
   const types = Object.values(data.types);
 
@@ -24,7 +24,7 @@ const PokemonCard = ({ data }: any) => {
             alt={name}
           />
         </div>
-        <div className="text-center text-neutral-800">#{order}</div>
+        <div className="text-center text-neutral-800">#{id}</div>
         <div className="text-center text-blue-500 text-md capitalize">
           {name}
         </div>

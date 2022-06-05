@@ -5,103 +5,30 @@ interface TypeProps {
 }
 
 const TypeFlair = ({ type }: TypeProps) => {
-  type = type.toUpperCase();
-  let flairStyling: string;
-
-  // I tried using templates strings like:
-  // flairStyling = `block bg-${type} w-max rounded-md`;
-  // but nothing shows up
-
-  switch (type) {
-    // Each type has their own flair color
-    // Currently unaware of any better way to do this :)
-    case "NORMAL": {
-      flairStyling = "block bg-normal w-max rounded-md";
-      break;
-    }
-    case "FIRE": {
-      flairStyling = "block bg-fire w-max rounded-md";
-      break;
-    }
-    case "WATER": {
-      flairStyling = "block bg-water w-max rounded-md";
-      break;
-    }
-    case "GRASS": {
-      flairStyling = "block bg-grass w-max rounded-md";
-      break;
-    }
-    case "ELECTRIC": {
-      flairStyling = "block bg-electric w-max rounded-md";
-      break;
-    }
-    case "ICE": {
-      flairStyling = "block bg-ice w-max rounded-md";
-      break;
-    }
-    case "FIGHTING": {
-      flairStyling = "block bg-fighting w-max rounded-md";
-      break;
-    }
-    case "POISON": {
-      flairStyling = "block bg-poison w-max rounded-md";
-      break;
-    }
-    case "GROUND": {
-      flairStyling = "block bg-ground w-max rounded-md";
-      break;
-    }
-    case "FLYING": {
-      flairStyling = "block bg-flying w-max rounded-md";
-      break;
-    }
-    case "PSYCHIC": {
-      flairStyling = "block bg-psychic w-max rounded-md";
-      break;
-    }
-    case "BUG": {
-      flairStyling = "block bg-bug w-max rounded-md";
-      break;
-    }
-    case "ROCK": {
-      flairStyling = "block bg-rock w-max rounded-md";
-      break;
-    }
-
-    case "GHOST": {
-      flairStyling = "block bg-ghost w-max rounded-md";
-      break;
-    }
-
-    case "DARK": {
-      flairStyling = "block bg-dark w-max rounded-md";
-      break;
-    }
-
-    case "DRAGON": {
-      flairStyling = "block bg-dragon w-max rounded-md";
-      break;
-    }
-    case "STEEL": {
-      flairStyling = "block bg-steel w-max rounded-md";
-      break;
-    }
-
-    case "FAIRY": {
-      flairStyling = "block bg-fairy w-max rounded-md";
-      break;
-    }
-
-    default: {
-      flairStyling = "block bg-warning w-max rounded-md";
-      type = "INVALID TYPE RECEIVED";
-      break;
-    }
+  const types : any= {
+    normal: "bg-normal",
+    fire: "bg-fire",
+    water: "bg-water",
+    electric: "bg-electric",
+    grass: "bg-grass",
+    ice: "bg-ice",
+    fighting: "bg-fighting",
+    poison: "bg-poison",
+    ground: "bg-ground",
+    flying: "bg-flying",
+    psychic: "bg-psychic",
+    bug: "bg-bug",
+    rock: "bg-rock",
+    ghost: "bg-ghost",
+    dragon: "bg-dragon",
+    dark: "bg-dark",
+    steel: "bg-steel",
+    fairy: "bg-fairy",
   }
 
   return (
-    <div className={flairStyling}>
-      <p className="appearance-none text-sm font-semibold text-white px-1 py-1 font-sans">
+    <div className={`block ${type ? types[type] : "bg-warning"} w-max rounded-md`}>
+      <p className="appearance-none text-sm font-semibold text-white px-1 py-1 font-sans uppercase">
         {type}
       </p>
     </div>
